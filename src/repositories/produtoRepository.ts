@@ -23,7 +23,7 @@ export class ProdutoRepository {
 
     update(produto: Produto): Produto | undefined {
         const index = this.produtos.findIndex((p) => p.id === produto.id);
-        if(index === -1) {
+        if(index !== -1) {
             this.produtos[index] = produto;
             return produto;
         }
