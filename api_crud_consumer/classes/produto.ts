@@ -3,5 +3,5 @@ export interface Produto {
     nome: string;
     qtdeEstoque: number;
     preco: number;
-    _idFornFK: number;
+    _idFornFK: number | null;
 }

@@ -50,9 +50,9 @@ async function listarProdutosComFornecedores(): Promise<void> {
 }
 
 async function adicionarProduto(): Promise<void> {
-    const produto = new Produto();
+    const produto: Produto = {} as Produto;
     produto.nome = input.question('Digite o nome do produto: ');
-    produto.qtdeEstoque = input.question('Digite a quantidade em estoque: ');
+    produto.qtdeEstoque = Number(input.question('Digite a quantidade em estoque: '));
     produto.preco = parseFloat(input.question('Digite o preço: '));
     try {
         const result = await axios.get('http://localhost:3000/fornecedores');
@@ -104,9 +104,9 @@ async function listarEditarProdutos(): Promise<void> {
                 case 0:
                     produto.nome = input.question('NOME: ');
                     produto.qtdeEstoque = Number(input.question('QTDE ESTOQUE: '));
-                    produto.preco = parseFloat(input.question('PREÇO: '));
+                    produto.preco = Number(input.question('PREÇO: '));
                     produto._idFornFK = Number(input.question('ID FORNECEDOR: '));
-                    const putResult = await axios.put(`http://localhost:3000/produtos/${produto!.id}`, produto);
+                    const putResult = await axios.put("http://localhost:3000/produtos", produto);
                     console.log((putResult.data as { message: string }).message);
                     break;
                 case 1:
