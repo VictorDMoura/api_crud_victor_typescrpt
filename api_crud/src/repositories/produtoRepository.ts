@@ -3,8 +3,8 @@ import { Produto } from "../models/produtoModel";
 
 export class ProdutoRepository {
     private produtos: Produto[] = [
-        { id: 1, nome: "Tijolo", qtdeEstoque: 100, preco: 0.90 },
-        { id: 2, nome: "Product 2", qtdeEstoque: 200 , preco: 25.00 },
+        { id: 1, nome: "Tijolo", qtdeEstoque: 100, preco: 0.90, idFornFK: 1 },
+        { id: 2, nome: "Product 2", qtdeEstoque: 200 , preco: 25.00, idFornFK: 2 },
     ];
 
 

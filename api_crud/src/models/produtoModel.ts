@@ -3,4 +3,5 @@ export interface Produto {
     nome: string;
     qtdeEstoque: number;
     preco: number;
+    idFornFK: number;
 }
